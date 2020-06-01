@@ -1,28 +1,50 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="font-body bg-gray-100 h-screen text-base flex flex-col">
+    <main class="flex flex-1 items-center justify-center">
+      <salary-negotiation />
+    </main>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SalaryNegotiation from './components/SalaryNegotiation'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    SalaryNegotiation
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.button,
+.button-ghost {
+  @apply border-orange-500
+         border-solid
+         border
+         px-4
+         py-1
+         shadow
+         rounded;
+  
+  &:disabled {
+    @apply cursor-auto
+           opacity-75;
+  }
+}
+
+.button {
+  @apply bg-orange-500
+         text-white;
+}
+
+.button-ghost {
+  @apply text-orange-500;
 }
 </style>
